@@ -10,6 +10,7 @@ h1 {
      color: #ed3737;
      font-size: 3rem;
      text-align: center;
+     padding: 25px;
 }
 h2 {
     color: hsl(17, 100%, 41%);
