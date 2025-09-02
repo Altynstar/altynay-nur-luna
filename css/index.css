@@ -44,3 +44,22 @@ section {
     border-left: 4px solid #2a9d8f;
     margin-bottom: 0.5rem;
 }
+/* Minimal Connect Links */
+.connect-links {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.connect-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.connect-links a:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+}
