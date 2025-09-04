@@ -14,6 +14,7 @@ h1 {
 }
 h2 {
     color: hsl(17, 100%, 41%);
+    font-size: 24px;
     font-style: italic;
     font-weight: 300;
     font-family: "Libertinus Keyboard", system-ui;
@@ -37,6 +38,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*  a subtle shadow for depth */
 }
 .skills-blocks li {
+    list-style-type: style none;
     background-color: #e9f5f3;
     color: #264653;
     padding: 1rem 1.5rem;
@@ -45,12 +47,6 @@ section {
     border-left: 4px solid #2a9d8f;
     margin-bottom: 0.5rem;
 }
-/* Minimal Connect Links */
-.connect-links {
-    text-align: center;
-    margin: 25px 0;
-}
-
 .connect-links a {
     display: inline-block;
     text-decoration: none;
@@ -63,4 +59,16 @@ section {
 .connect-links a:hover {
     color: #0056b3;
     transform: scale(1.2);
+}
+
+/* Specifically target the icons */
+.connect-links i {
+    font-size: 2rem; /* Make icons larger */
+    color: #007bff; /* Icon color */
+    transition: all 0.3s ease;
+}
+
+.connect-links a:hover i {
+    color: #0056b3; /* Color change on hover */
+    transform: scale(1.2); /* Grow effect on hover */
 }
