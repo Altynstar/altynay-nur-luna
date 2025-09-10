@@ -83,74 +83,38 @@ section {
     border-left: 4px solid #2a9d8f;
     margin-bottom: 0.5rem;
 }
-/* Section Layout with Flexbox */
-.experience-container {
+#Experience ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.experience-item {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1.5rem;
+#Experience li {
     background-color: #e9f5f3;
+    padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid #2a9d8f;
 }
 
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-.job-title {
-    font-weight: bold;
+#Experience h3 {
     color: #264653;
+    margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
-    margin: 0;
 }
 
-.job-date {
+#Experience span {
     color: #2a9d8f;
     font-style: italic;
-    margin: 0;
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.job-description {
-    width: 100%;
+#Experience p {
     color: #264653;
     margin: 0;
     line-height: 1.6;
-}
-.connect-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #007bff;
-    font-size: 24px;
-    margin: 0 15px;
-    transition: all 0.3s ease;
-}
-
-.connect-links a:hover {
-    color: #0056b3;
-    transform: scale(1.2);
-}
-
-/* target the icons */
-.connect-links i {
-    font-size: 2rem; /* Make icons larger */
-    color: #007bff; /* Icon color */
-    transition: all 0.3s ease;
-}
-
-.connect-links a:hover i {
-    color: #0056b3; /* Color change */
-    transform: scale(1.2); /* Grow effect */
 }
 /* Connect Section Flexbox */
 .connect-links {
