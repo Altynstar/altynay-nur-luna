@@ -1,85 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Altynay Nurmagambetova's Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <link rel="stylesheet" href="css/index.css">
-    </head>
+<head>
+    <title>Altynay Nurmagambetova's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Portfolio, Web Development">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Simple inline styles for demonstration only */
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        nav { background: #2a9d8f; padding: 15px; margin-bottom: 20px; }
+        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; }
+        section { margin-bottom: 30px; padding: 20px; background: #f5f5f5; }
+        .profile-photo { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; display: block; margin: 20px auto; }
+    </style>
+</head>
 <body>
-     <nav class="main-nav">
-        <ul>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Experience">Experience</a></li>
-            <li><a href="#Skills">Skills</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#Connect">Connect</a></li>
-        </ul>
-    </nav>
-    
-    <h1>Altynay Nurmagambetova</h1>
-     <img src="images/portrait.jpeg" alt="A professional portrait of Altynay Nurmagambetova" class="profile-photo"/>   
-     
-      <section id="About">
-       <h2>About</h2>
-       <p>I am a passionate learner starting my journey in web development. When I'm not coding you can find me reading the Bible, working out or experimenting new recipes in the kitchen.</p>
-       <p>I am currently learning HTML, CSS, and JavaScript to build interactive and responsive web applications. I enjoy creating simple projects to apply my knowledge and improve my skills.</p>
-       <p>My goal is to become a proficient web developer and contribute to exciting projects in JS.</p>
-    </section>
+    <div class="container">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Connect">Connect</a></li>
+            </ul>
+        </nav>
+        
+        <h1>Altynay Nurmagambetova</h1>
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80" alt="A professional portrait of Altynay Nurmagambetova" class="profile-photo"/>   
+        
+        <section id="About">
+            <h2>About</h2>
+            <p>I am a passionate learner starting my journey in web development. When I'm not coding you can find me reading the Bible, working out or experimenting new recipes in the kitchen.</p>
+            <p>I am currently learning HTML, CSS, and JavaScript to build interactive and responsive web applications. I enjoy creating simple projects to apply my knowledge and improve my skills.</p>
+            <p>My goal is to become a proficient web developer and contribute to exciting projects in JS.</p>
+        </section>
 
-    <section id="Skills">
-        <h2>Skills</h2>
-        <p>Here are some of the skills I have acquired so far:</p>
-        <ul class="skills-blocks">
-            <li>HTML & CSS Fundamentals</li>
-            <li>Git and GitHub Version Control</li>
-            <li>Command Line / Terminal Navigation</li>
-            <li>VS Code Editor</li>
-        </ul>
-    </section>
+        <section id="Skills">
+            <h2>Skills</h2>
+            <p>Here are some of the skills I have acquired so far:</p>
+            <ul class="skills-blocks">
+                <li>HTML & CSS Fundamentals</li>
+                <li>Git and GitHub Version Control</li>
+                <li>Command Line / Terminal Navigation</li>
+                <li>VS Code Editor</li>
+                <li>Responsive Design</li>
+                <li>JavaScript Basics</li>
+            </ul>
+        </section>
 
-    <section id="Experience">
-        <h2>Experience</h2>
-        <ul>
-            <li>
-                <h3>Web Development Student</h3>
-                <span>2024 - Present</span>
-                <p>
-                    Currently learning the fundamentals of HTML, CSS, and JavaScript. Working on various projects to apply my knowledge and improve my skills.
-                </p>
-            </li>
-            <li>
-                <h3>Online Course Completion</h3>
-                <span>2024</span>
-                <p>Completed courses in HTML & CSS fundamentals, Git version control, and command line navigation.</p>
-            </li>
-            <li>
-                <h3>Personal Portfolio Project</h3>
-                <span>2024</span>
-                <p>Built a responsive portfolio website using HTML and CSS with modern design principles.</p>
-            </li>
-        </ul>
-    </section>
+        <section id="Experience">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <h3>Web Development Student</h3>
+                    <span>2024 - Present</span>
+                    <p>
+                        Currently learning the fundamentals of HTML, CSS, and JavaScript. Working on various projects to apply my knowledge and improve my skills.
+                    </p>
+                </li>
+                <li>
+                    <h3>Online Course Completion</h3>
+                    <span>2024</span>
+                    <p>Completed courses in HTML & CSS fundamentals, Git version control, and command line navigation.</p>
+                </li>
+                <li>
+                    <h3>Personal Portfolio Project</h3>
+                    <span>2024</span>
+                    <p>Built a responsive portfolio website using HTML and CSS with modern design principles.</p>
+                </li>
+            </ul>
+        </section>
 
-    <section id="Projects">
-        <h2>Projects</h2>
-        <p>Here are some of the projects I have worked on:</p>
-        <ul class="projects-list">  
-            <!-- Add your projects here later -->
-        </ul>
-    </section>
+        <section id="Projects">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I have worked on:</p>
+            <ul class="projects-list">  
+                <li>
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A responsive website built with HTML and CSS to showcase my skills and projects.</p>
+                </li>
+                <li>
+                    <h3>Recipe Blog Template</h3>
+                    <p>A blog template for sharing cooking recipes, built with CSS Grid and Flexbox.</p>
+                </li>
+                <li>
+                    <h3>JavaScript To-Do App</h3>
+                    <p>A simple interactive to-do application built with HTML, CSS, and JavaScript.</p>
+                </li>
+            </ul>
+        </section>
 
-    <section id="Connect">
-        <h2>Connect</h2>
-        <p>You can connect with me through the following platforms:</p>
-        <div class="connect-links">
-            <a href="https://www.linkedin.com/in/altynai-nur?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
-                LinkedIn
-            </a>
-            <a href="https://github.com/Altynstar/altynay-nur-luna">
-                GitHub
-            </a>
-        </div>
-    </section>
+        <section id="Connect">
+            <h2>Connect</h2>
+            <p>You can connect with me through the following platforms:</p>
+            <div class="connect-links">
+                <a href="https://www.linkedin.com/in/altynai-nur?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Altynstar/altynay-nur-luna" target="_blank">
+                    GitHub
+                </a>
+                <a href="mailto:altynay@example.com">
+                    Email
+                </a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

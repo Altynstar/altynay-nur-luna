@@ -1,10 +1,17 @@
+/* ========================
+   GLOBAL STYLES (Mobile)
+   ======================== */
 body {
     background-color: #f3deb2;
     color: rgb(53, 18, 53);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* ========================
+   NAVIGATION - MOBILE FIRST
+   ======================== */
 .main-nav {
-    background-color: #2a9d8f; /* Matches your photo border color */
+    background-color: #2a9d8f;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -39,40 +46,61 @@ body {
 .main-nav a:active {
     transform: translateY(0);
 }
+
+/* ========================
+   TYPOGRAPHY - MOBILE FIRST
+   ======================== */
 h1 {
-    font-family: "Libertinus Keyboard", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Georgia", serif;
     font-weight: 1000;
-    font-style: cursive;
-     color: #ed3737;
-     font-size: 3rem;
-     text-align: center;
-     padding: 25px;
-}
-h2 {
-    color: hsl(17, 100%, 41%);
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 300;
-    font-family: "Libertinus Keyboard", system-ui;
-}
-section {
-    margin-bottom: 2rem; /*  space below each section */
-    padding: 1rem;       /*  space inside each section */
-    background-color: #ccd8d5; /*  light background for sections */
-    border-radius: 8px; /*  rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*  subtle shadow */
+    color: #ed3737;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px;
 }
 
-.profile-photo {
-    width: 200px;           /* width of the image */
-    height: 200px;          /*  height of the image */
-    border-radius: 50%;     /*  image circular */
-    object-fit: cover;      /*  image fills the circle without stretching */
-    display: block;         /* margin: auto to work for centering */
-    margin: 1rem auto;      /* space above/below and centers the image horizontally */
-    border: 4px solid #2a9d8f; /* a colored border around the circle */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*  a subtle shadow for depth */
+h2 {
+    color: hsl(17, 100%, 41%);
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    font-family: "Georgia", serif;
 }
+
+/* ========================
+   LAYOUT & SECTIONS
+   ======================== */
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ccd8d5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+   PROFILE IMAGE
+   ======================== */
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 1rem auto;
+    border: 4px solid #2a9d8f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================
+   SKILLS SECTION
+   ======================== */
+.skills-blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+
 .skills-blocks li {
     list-style-type: none;
     background-color: #e9f5f3;
@@ -81,8 +109,11 @@ section {
     border-radius: 8px;
     text-align: center;
     border-left: 4px solid #2a9d8f;
-    margin-bottom: 0.5rem;
 }
+
+/* ========================
+   EXPERIENCE SECTION
+   ======================== */
 #Experience ul {
     list-style: none;
     padding: 0;
@@ -116,7 +147,10 @@ section {
     margin: 0;
     line-height: 1.6;
 }
-/* Connect Section Flexbox */
+
+/* ========================
+   CONNECT SECTION - MOBILE
+   ======================== */
 .connect-links {
     display: flex;
     justify-content: center;
@@ -149,4 +183,111 @@ section {
 
 .connect-links a:active {
     transform: translateY(-1px);
+}
+
+/* ========================
+   TABLET STYLES (768px and up)
+   ======================== */
+@media (min-width: 768px) {
+    /* Changes for H1 */
+    h1 {
+        font-size: 3rem; /* 1st change: font size */
+        letter-spacing: 1.5px; /* 2nd change: letter spacing */
+    }
+    
+    /* Changes for H2 */
+    h2 {
+        font-size: 24px; /* 1st change: font size */
+        color: #e76f51; /* 2nd change: color */
+        border-bottom: 2px solid #2a9d8f; /* 3rd change: border style */
+    }
+    
+    /* Changes for profile photo */
+    .profile-photo {
+        width: 220px; /* 1st change: width */
+        height: 220px; /* 2nd change: height */
+        border-width: 5px; /* 3rd change: border width */
+    }
+    
+    /* Changes for navigation */
+    .main-nav {
+        padding: 1.2rem 2.5rem; /* 1st change: padding */
+        border-radius: 12px; /* 2nd change: border radius */
+    }
+    
+    /* Changes for skills section */
+    .skills-blocks {
+        grid-template-columns: repeat(2, 1fr); /* 1st change: grid layout */
+        gap: 1.2rem; /* 2nd change: gap size */
+    }
+    
+    /* Changes for experience section */
+    #Experience li {
+        padding: 1.8rem; /* 1st change: padding */
+        border-left-width: 6px; /* 2nd change: border width */
+    }
+    
+    /* Additional tablet styles */
+    body {
+        padding: 1.5rem;
+    }
+    
+    .connect-links {
+        gap: 2rem;
+    }
+}
+
+/* ========================
+   DESKTOP STYLES (1024px and up)
+   ======================== */
+@media (min-width: 1024px) {
+    /* Changes for H1 */
+    h1 {
+        font-size: 3.5rem; /* 1st change: font size */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* 2nd change: text shadow */
+    }
+    
+    /* Changes for H2 */
+    h2 {
+        font-size: 26px; /* 1st change: font size */
+        border-bottom: 3px solid #2a9d8f; /* 2nd change: border style */
+        padding-bottom: 0.8rem; /* 3rd change: padding */
+    }
+    
+    /* Changes for profile photo */
+    .profile-photo {
+        width: 250px; /* 1st change: width */
+        height: 250px; /* 2nd change: height */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 3rd change: shadow */
+    }
+    
+    /* Changes for navigation */
+    .main-nav ul {
+        gap: 3rem; /* 1st change: gap between items */
+        justify-content: space-around; /* 2nd change: alignment */
+    }
+    
+    .main-nav a {
+        padding: 0.8rem 1.5rem; /* 3rd change: padding */
+    }
+    
+    /* Changes for skills section */
+    .skills-blocks {
+        grid-template-columns: repeat(3, 1fr); /* 1st change: grid layout */
+        gap: 1.5rem; /* 2nd change: gap size */
+    }
+    
+    /* Changes for experience section */
+    #Experience ul {
+        display: grid; /* 1st change: grid layout */
+        grid-template-columns: repeat(2, 1fr); /* 2nd change: grid columns */
+        gap: 2rem; /* 3rd change: gap size */
+    }
+    
+    /* Changes for connect section */
+    .connect-links a {
+        min-width: 160px; /* 1st change: min-width */
+        font-size: 1.2rem; /* 2nd change: font size */
+        padding: 1.2rem 2.5rem; /* 3rd change: padding */
+    }
 }
