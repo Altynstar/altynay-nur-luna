@@ -73,7 +73,7 @@ h2 {
    ======================== */
 section {
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #ccd8d5;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -190,7 +190,10 @@ section {
    TABLET STYLES (768px and up)
    ======================== */
 @media (min-width: 768px) {
-    /* Changes for H1 */
+    section {
+        padding: 2rem;
+        margin-bottom: 2.5;
+    }
     h1 {
         font-size: 3rem; /* 3 × 16px = 48px */
         letter-spacing: 1.5px;
