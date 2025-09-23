@@ -111,7 +111,83 @@ section {
     text-align: center;
     border-left: 4px solid #2a9d8f;
 }
+/* ========================
+   SKILLS SECTION STYLING
+   ======================== */
 
+/* Style the new skills list (empty UL we're populating with JS) */
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+#skills li {
+    list-style: none;
+    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
+    color: white;
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+#skills li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.4);
+    background: linear-gradient(135deg, #21867a 0%, #1b6f65 100%);
+    border-color: #e76f51;
+}
+
+#skills li:active {
+    transform: translateY(-1px);
+}
+
+/* ========================
+   TABLET STYLES (768px and up) - SKILLS
+   ======================== */
+@media (min-width: 768px) {
+    #skills ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    #skills li {
+        padding: 1.5rem 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================
+   DESKTOP STYLES (1024px and up) - SKILLS
+   ======================== */
+@media (min-width: 1024px) {
+    #skills ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    #skills li {
+        padding: 1.8rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 16px;
+    }
+}
+
+/* ========================
+   LARGE DESKTOP STYLES (1200px and up) - SKILLS
+   ======================== */
+@media (min-width: 1200px) {
+    #skills ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
+    }
+}
 /* ========================
    EXPERIENCE SECTION
    ======================== */
@@ -192,7 +268,7 @@ section {
 @media (min-width: 768px) {
     section {
         padding: 2rem;
-        margin-bottom: 2.5;
+        margin-bottom: 2.5rem;
     }
     h1 {
         font-size: 3rem; /* 3 × 16px = 48px */
