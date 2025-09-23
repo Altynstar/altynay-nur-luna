@@ -32,5 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+    // Smooth scrolling for navigation
+document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 });
 // End of js/index.js
