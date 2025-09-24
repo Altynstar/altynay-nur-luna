@@ -1,5 +1,5 @@
 /* ========================
-   GLOBAL STYLES (Mobile)
+   GLOBAL STYLES
    ======================== */
 body {
     background-color: #f3deb2;
@@ -9,7 +9,7 @@ body {
 }
 
 /* ========================
-   NAVIGATION - MOBILE FIRST
+   NAVIGATION - MOBILE 
    ======================== */
 .main-nav {
     background-color: #2a9d8f;
@@ -149,46 +149,6 @@ section {
 }
 
 /* ========================
-   TABLET STYLES (768px and up) - SKILLS
-   ======================== */
-@media (min-width: 768px) {
-    #skills ul {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    #skills li {
-        padding: 1.5rem 1rem;
-        font-size: 1.1rem;
-    }
-}
-
-/* ========================
-   DESKTOP STYLES (1024px and up) - SKILLS
-   ======================== */
-@media (min-width: 1024px) {
-    #skills ul {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    #skills li {
-        padding: 1.8rem 1rem;
-        font-size: 1.2rem;
-        border-radius: 16px;
-    }
-}
-
-/* ========================
-   LARGE DESKTOP STYLES (1200px and up) - SKILLS
-   ======================== */
-@media (min-width: 1200px) {
-    #skills ul {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2.5rem;
-    }
-}
-/* ========================
    EXPERIENCE SECTION
    ======================== */
 #Experience ul {
@@ -315,6 +275,17 @@ section {
     .connect-links {
         gap: 2rem;
     }
+    
+    /* Skills section media query merged */
+    #skills ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    #skills li {
+        padding: 1.5rem 1rem;
+        font-size: 1.1rem;
+    }
 }
 
 /* ========================
@@ -369,5 +340,27 @@ section {
         min-width: 160px;
         font-size: 1.2rem; /* 1.2 × 16px = 19.2px */
         padding: 1.2rem 2.5rem;
+    }
+    
+    /* Skills section media query merged here */
+    #skills ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    #skills li {
+        padding: 1.8rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 16px;
+    }
+}
+
+/* ========================
+   LARGE DESKTOP STYLES (1200px and up)
+   ======================== */
+@media (min-width: 1200px) {
+    #skills ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
     }
 }
