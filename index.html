@@ -16,6 +16,7 @@
                 <li><a href="#Skills">Skills</a></li>
                 <li><a href="#Projects">Projects</a></li>
                 <li><a href="#Connect">Connect</a></li>
+                <li><a href="#message">Leave a Message</a></li>
             </ul>
         </nav>
         
@@ -99,6 +100,31 @@
                     Email
                 </a>
             </div>
+        </section>
+
+        <!-- Leave a Message Form Section -->
+        <section id="message">
+            <h2>Leave a Message</h2>
+            <form name="leave_message">
+                <label for="usersName">Name:</label><br>
+                <input type="text" name="usersName" id="usersName" required><br><br>
+                
+                <label for="usersEmail">Email:</label><br>
+                <input type="email" name="usersEmail" id="usersEmail" required><br><br>
+                
+                <label for="usersMessage">Message:</label><br>
+                <textarea name="usersMessage" id="usersMessage" required></textarea><br><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- NEW MESSAGES LIST SECTION -->
+        <section id="messages">
+            <h2>Messages</h2>
+            <ul>
+                <!-- Empty list for JavaScript to populate -->
+            </ul>
         </section>
     </div>
     <script src="js/index.js"></script>
