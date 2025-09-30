@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    // Smooth scrolling for navigation
+    // echo "// Smooth scrolling added for better UX"
 document.querySelectorAll('.main-nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
