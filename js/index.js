@@ -37,99 +37,93 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectSection = document.getElementById('projects');
     const projectList = projectSection ? projectSection.querySelector('ul') : null;
 
-    // Fetch GitHub Repositories using XMLHttpRequest with error handling
-    const githubUsername = "AltynayNurmagambetova"; // Replace with your actual GitHub username
-    const xhr = new XMLHttpRequest();
+    // ✅ FIXED: Use correct GitHub username and fetch()
+    // Your GitHub username from your portfolio URL is "Altynstar"
+    const githubUsername = "Altynstar";
     
-    xhr.open('GET', `https://api.github.com/users/${githubUsername}/repos`);
-    xhr.send();
-    
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            try {
-                // Parse the response and store in repositories variable
-                const repositories = JSON.parse(xhr.response);
-                
-                // Console.log the repositories to see the data
-                console.log('GitHub Repositories:', repositories);
-                
-                // You can now work with the repositories data
-                displayRepositories(repositories);
-            } catch (parseError) {
-                // Handle JSON parsing errors
-                console.error('Error parsing JSON:', parseError);
-                displayErrorMessage('Failed to load projects data. Please try again later.');
+    fetch(`https://api.github.com/users/${githubUsername}/repos`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        } else {
-            // Handle HTTP errors (404, 500, etc.)
-            console.error('Error fetching repositories. Status:', xhr.status);
-            
-            if (xhr.status === 404) {
-                displayErrorMessage('GitHub user not found. Please check the username.');
-            } else if (xhr.status === 403) {
-                displayErrorMessage('API rate limit exceeded. Please try again later.');
-            } else {
-                displayErrorMessage('Failed to load projects. Server error: ' + xhr.status);
-            }
-        }
-    };
-    
-    xhr.onerror = function() {
-        // Handle network errors
-        console.error('Network request failed');
-        displayErrorMessage('Network error: Unable to connect to GitHub. Check your internet connection.');
-    };
-    
-    xhr.ontimeout = function() {
-        // Handle timeout errors
-        console.error('Request timeout');
-        displayErrorMessage('Request timeout: Please try again later.');
-    };
+            return response.json();
+        })
+        .then(repositories => {
+            console.log('GitHub Repositories:', repositories);
+            displayRepositories(repositories);
+        })
+        .catch(error => {
+            console.error('Error fetching repositories:', error);
+            // Display fallback projects if API fails
+            displayFallbackProjects();
+        });
 
-    // Function to display repositories with for loop
+    // Function to display repositories
     function displayRepositories(repos) {
-        // Use the projectSection and projectList variables we created above
         if (projectSection && projectList) {
-            // Clear existing content
+            // Clear any existing hard-coded content
             projectList.innerHTML = '';
             
             if (repos.length === 0) {
-                projectList.innerHTML = '<li>No repositories found for this user.</li>';
+                projectList.innerHTML = '<li>No repositories found.</li>';
                 return;
             }
             
-            // Create a for loop to iterate over repositories Array, starting at index 0
-            for (let i = 0; i < repos.length; i++) {
-                // Inside the loop, create a variable named project to make a new list item (li) element
+            // Display only non-portfolio repositories (filter out portfolio itself)
+            const filteredRepos = repos.filter(repo => 
+                repo.name !== 'altynay-nur-luna' && 
+                !repo.name.includes('portfolio')
+            );
+            
+            if (filteredRepos.length === 0) {
+                displayFallbackProjects();
+                return;
+            }
+            
+            for (let i = 0; i < filteredRepos.length; i++) {
                 const project = document.createElement('li');
                 
-                // On the next line, set the inner text of your project variable to the current Array element's name property
-                project.innerText = repos[i].name;
+                // Create a link to the GitHub repository
+                const projectLink = document.createElement('a');
+                projectLink.href = filteredRepos[i].html_url;
+                projectLink.target = '_blank';
+                projectLink.textContent = filteredRepos[i].name;
                 
-                // On the next line, append the project element to the projectList element
+                // Add description if available
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = filteredRepos[i].description || 'No description available';
+                projectDescription.style.fontSize = '0.9rem';
+                projectDescription.style.color = '#666';
+                
+                project.appendChild(projectLink);
+                project.appendChild(projectDescription);
                 projectList.appendChild(project);
             }
-        } else {
-            console.error('Projects section or list not found in the DOM');
         }
     }
 
-    // Function to display error messages to the user
-    function displayErrorMessage(message) {
-        // Use the projectSection and projectList variables we created above
+    // Fallback projects if GitHub API fails
+    function displayFallbackProjects() {
         if (projectSection && projectList) {
-            projectList.innerHTML = `<li class="error-message">${message}</li>`;
-        } else if (projectSection) {
-            // If no list exists, create one with the error message
-            const errorList = document.createElement('ul');
-            errorList.innerHTML = `<li class="error-message">${message}</li>`;
-            projectSection.appendChild(errorList);
-        } else {
-            console.error('Projects section not found in the DOM');
+            projectList.innerHTML = '';
+            
+            const fallbackProjects = [
+                { name: 'Personal Portfolio Website', description: 'Responsive portfolio built with HTML, CSS, and JavaScript' },
+                { name: 'Recipe Blog Template', description: 'Blog template using CSS Grid and Flexbox' },
+                { name: 'JavaScript To-Do App', description: 'Interactive to-do application' }
+            ];
+            
+            for (let i = 0; i < fallbackProjects.length; i++) {
+                const project = document.createElement('li');
+                project.innerHTML = `
+                    <strong>${fallbackProjects[i].name}</strong>
+                    <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 0 0;">
+                        ${fallbackProjects[i].description}
+                    </p>
+                `;
+                projectList.appendChild(project);
+            }
         }
-        
-        // Also log to console for debugging
-        console.error('Projects section error:', message);
     }
 
     // Smooth scrolling for navigation
@@ -158,42 +152,58 @@ document.addEventListener('DOMContentLoaded', function() {
             const usersEmail = e.target.usersEmail.value;
             const usersMessage = e.target.usersMessage.value;
             
-            // Log the values to console
             console.log('Name:', usersName);
             console.log('Email:', usersEmail);
             console.log('Message:', usersMessage);
             
-            // Display message in list
+            // API call with fetch()
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: usersName,
+                    email: usersEmail, 
+                    message: usersMessage
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('API Success:', data);
+            })
+            .catch(error => {
+                console.error('API Error:', error);
+            });
+            
+            // Display message locally
             const messageSection = document.getElementById('messages');
             const messageList = messageSection.querySelector('ul');
             
-            // new message element
             const newMessage = document.createElement('li');
             newMessage.innerHTML = `
                 <a href="mailto:${usersEmail}">${usersName}</a>
                 <span>${usersMessage}</span>
             `;
             
-            // remove button
             const removeButton = document.createElement('button');
             removeButton.innerText = "remove";
             removeButton.type = "button";
             
-            // event listener to remove button
             removeButton.addEventListener('click', function() {
                 const entry = this.parentNode;
                 entry.remove();
             });
             
-            // Append remove button to message
             newMessage.appendChild(removeButton);
-            
-            // Append message to list
             messageList.appendChild(newMessage);
             
-            // Reset the form after submission
             e.target.reset();
         });
     }
 });
-// End of js/index.js
