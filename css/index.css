@@ -1,100 +1,5 @@
 /* ========================
-   GLOBAL STYLES
-   ======================== */
-body {
-    background-color: #f3deb2;
-    color: rgb(53, 18, 53);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-}
-
-/* ========================
-   NAVIGATION - MOBILE 
-   ======================== */
-.main-nav {
-    background-color: #2a9d8f;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.main-nav li {
-    margin: 0;
-}
-
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.main-nav a:hover {
-    background-color: #21867a;
-    transform: translateY(-2px);
-}
-
-.main-nav a:active {
-    transform: translateY(0);
-}
-
-/* ========================
-   TYPOGRAPHY - MOBILE 
-   ======================== */
-h1 {
-    font-family: "Georgia", serif;
-    font-weight: 1000;
-    color: #ed3737;
-    font-size: 2.5rem;
-    text-align: center;
-    padding: 20px;
-}
-
-h2 {
-    color: hsl(17, 100%, 41%);
-    font-size: 1.375rem;
-    font-style: italic;
-    font-weight: 300;
-    font-family: "Georgia", serif;
-}
-
-/* ========================
-   LAYOUT & SECTIONS
-   ======================== */
-section {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: #ccd8d5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ========================
-   PROFILE IMAGE
-   ======================== */
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 1rem auto;
-    border: 4px solid #2a9d8f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* ========================
-   PROJECTS SECTION - MOBILE
+   PROJECTS SECTION - MOBILE (FIXED & ENHANCED)
    ======================== */
 #projects ul {
     list-style: none;
@@ -108,7 +13,7 @@ section {
 #projects li {
     background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
     color: white;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem 1rem;
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
@@ -116,6 +21,11 @@ section {
     transition: all 0.3s ease;
     border: 2px solid transparent;
     font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 }
 
 #projects li:hover {
@@ -137,328 +47,9 @@ section {
 }
 
 /* ========================
-   SKILLS SECTION
-   ======================== */
-.skills-blocks {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-}
-
-.skills-blocks li {
-    list-style-type: none;
-    background-color: #e9f5f3;
-    color: #264653;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border-left: 4px solid #2a9d8f;
-}
-
-/* ========================
-   SKILLS SECTION STYLING
-   ======================== */
-#skills ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-#skills li {
-    list-style: none;
-    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
-    color: white;
-    padding: 1.2rem 1rem;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
-    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-#skills li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.4);
-    background: linear-gradient(135deg, #21867a 0%, #1b6f65 100%);
-    border-color: #e76f51;
-}
-
-#skills li:active {
-    transform: translateY(-1px);
-}
-
-/* ========================
-   EXPERIENCE SECTION
-   ======================== */
-#Experience ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#Experience li {
-    background-color: #e9f5f3;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #2a9d8f;
-}
-
-#Experience h3 {
-    color: #264653;
-    margin: 0 0 0.5rem 0;
-    font-size: 1.2rem;
-}
-
-#Experience span {
-    color: #2a9d8f;
-    font-style: italic;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-#Experience p {
-    color: #264653;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* ========================
-   CONNECT SECTION - MOBILE
-   ======================== */
-.connect-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.connect-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    min-width: 140px;
-    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
-}
-
-.connect-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.4);
-    background: linear-gradient(135deg, #21867a 0%, #1b6f65 100%);
-}
-
-.connect-links a:active {
-    transform: translateY(-1px);
-}
-
-/* ========================
-   MESSAGE FORM STYLING
-   ======================== */
-#message form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-
-#message label {
-    display: block;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-    color: #264653;
-    font-size: 1.1rem;
-}
-
-#message input,
-#message textarea {
-    width: 100%;
-    padding: 1.2rem;
-    border: 2px solid #2a9d8f;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.3s ease;
-    background-color: white;
-    box-sizing: border-box;
-    margin-bottom: 1.5rem;
-}
-
-#message input:focus,
-#message textarea:focus {
-    outline: none;
-    border-color: #e76f51;
-    box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.1);
-    transform: translateY(-2px);
-}
-
-#message textarea {
-    height: 150px;
-    resize: vertical;
-    min-height: 120px;
-}
-
-#message button {
-    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
-    color: white;
-    border: none;
-    padding: 1.3rem 2.5rem;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
-    margin-top: 0.5rem;
-    min-height: 60px;
-}
-
-#message button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(42, 157, 143, 0.4);
-    background: linear-gradient(135deg, #21867a 0%, #1b6f65 100%);
-}
-
-#message button:active {
-    transform: translateY(-1px);
-}
-
-/* ========================
-   MESSAGES SECTION STYLING
-   ======================== */
-#messages ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-#messages li {
-    background-color: #e9f5f3;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 12px;
-    border-left: 6px solid #2a9d8f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#messages li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-#messages a {
-    color: #2a9d8f;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-#messages a:hover {
-    color: #e76f51;
-    text-decoration: underline;
-}
-
-#messages span {
-    color: #264653;
-    line-height: 1.6;
-    font-size: 1.1rem;
-    background-color: white;
-    padding: 1.2rem;
-    border-radius: 6px;
-    border-left: 3px solid #e76f51;
-}
-
-#messages button {
-    background-color: #e76f51;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    align-self: flex-start;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 4px rgba(231, 111, 81, 0.3);
-    min-height: 50px;
-    min-width: 120px;
-}
-
-#messages button:hover {
-    background-color: #d65a3c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(231, 111, 81, 0.4);
-}
-
-#messages button:active {
-    transform: translateY(0);
-}
-
-/* ========================
-   TABLET STYLES (768px and up)
+   TABLET STYLES - PROJECTS (768px and up)
    ======================== */
 @media (min-width: 768px) {
-    section {
-        padding: 2rem;
-        margin-bottom: 2.5rem;
-    }
-    h1 {
-        font-size: 3rem;
-        letter-spacing: 1.5px;
-    }
-    
-    h2 {
-        font-size: 1.5rem;
-        color: #e76f51;
-        border-bottom: 2px solid #2a9d8f;
-    }
-    
-    .profile-photo {
-        width: 220px;
-        height: 220px;
-        border-width: 5px;
-    }
-    
-    .main-nav {
-        padding: 1.2rem 2.5rem;
-        border-radius: 12px;
-    }
-    
-    .skills-blocks {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
-    }
-    
-    #Experience li {
-        padding: 1.8rem;
-        border-left-width: 6px;
-    }
-    
-    body {
-        padding: 1.5rem;
-    }
-    
-    .connect-links {
-        gap: 2rem;
-    }
-    
     /* Projects Section Tablet Styles */
     #projects ul {
         display: grid;
@@ -467,109 +58,17 @@ section {
     }
     
     #projects li {
-        padding: 1.5rem 1rem;
+        padding: 1.8rem 1rem;
         font-size: 1.2rem;
         border-radius: 16px;
-    }
-    
-    #skills ul {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    #skills li {
-        padding: 1.5rem 1rem;
-        font-size: 1.1rem;
-    }
-    
-    /* Message Form Tablet Styles */
-    #message form {
-        padding: 2rem;
-    }
-    
-    #message input,
-    #message textarea {
-        padding: 1.3rem;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-    
-    #message button {
-        width: auto;
-        min-width: 220px;
-        padding: 1.4rem 3rem;
-        font-size: 1.3rem;
-    }
-    
-    /* Messages Section Tablet Styles */
-    #messages li {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-        padding: 1.8rem;
-    }
-    
-    #messages span {
-        flex-grow: 1;
-        margin: 0 1.5rem;
-        font-size: 1.1rem;
-    }
-    
-    #messages button {
-        align-self: center;
-        padding: 1rem 2.2rem;
-        min-width: 130px;
+        min-height: 120px;
     }
 }
 
 /* ========================
-   DESKTOP STYLES (1024px and up)
+   DESKTOP STYLES - PROJECTS (1024px and up)
    ======================== */
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 3.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    h2 {
-        font-size: 1.625rem;
-        border-bottom: 3px solid #2a9d8f;
-        padding-bottom: 0.8rem;
-    }
-    
-    .profile-photo {
-        width: 250px;
-        height: 250px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-    
-    .main-nav ul {
-        gap: 3rem;
-        justify-content: space-around;
-    }
-    
-    .main-nav a {
-        padding: 0.8rem 1.5rem;
-    }
-    
-    .skills-blocks {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-    
-    #Experience ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
-    .connect-links a {
-        min-width: 160px;
-        font-size: 1.2rem;
-        padding: 1.2rem 2.5rem;
-    }
-    
     /* Projects Section Desktop Styles */
     #projects ul {
         grid-template-columns: repeat(3, 1fr);
@@ -577,67 +76,15 @@ section {
     }
     
     #projects li {
-        padding: 1.8rem 1rem;
+        padding: 2rem 1.5rem;
         font-size: 1.3rem;
         border-radius: 20px;
-        min-height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #skills ul {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    #skills li {
-        padding: 1.8rem 1rem;
-        font-size: 1.2rem;
-        border-radius: 16px;
-    }
-    
-    /* Message Form Desktop Styles */
-    #message form {
-        max-width: 700px;
-        padding: 2.5rem;
-    }
-    
-    #message input,
-    #message textarea {
-        padding: 1.4rem;
-        font-size: 1.2rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    #message button {
-        padding: 1.5rem 4rem;
-        font-size: 1.4rem;
-        min-width: 250px;
-    }
-    
-    #messages li {
-        padding: 2rem;
-    }
-    
-    #messages a {
-        font-size: 1.3rem;
-    }
-    
-    #messages span {
-        font-size: 1.2rem;
-        padding: 1.5rem;
-    }
-    
-    #messages button {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.2rem;
-        min-width: 140px;
+        min-height: 140px;
     }
 }
 
 /* ========================
-   LARGE DESKTOP STYLES (1200px and up)
+   LARGE DESKTOP STYLES - PROJECTS (1200px and up)
    ======================== */
 @media (min-width: 1200px) {
     #projects ul {
@@ -647,12 +94,7 @@ section {
     
     #projects li {
         font-size: 1.4rem;
-        min-height: 140px;
-        padding: 2rem 1.5rem;
-    }
-    
-    #skills ul {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2.5rem;
+        min-height: 160px;
+        padding: 2.5rem 2rem;
     }
 }
