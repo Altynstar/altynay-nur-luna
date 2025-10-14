@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Fetch GitHub repositories and display them
-    // Your GitHub username from your portfolio URL is "Altynstar"
+    // GitHub username from portfolio URL is "Altynstar"
     const githubUsername = "Altynstar";
     
     fetch(`https://api.github.com/users/${githubUsername}/repos`)
@@ -50,11 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error fetching repositories:', error);
-            // Display fallback projects if API fails
-            displayFallbackProjects();
+
+            ////////////////////
+            // Replace these instructions with actual code:
+            // Create an li element named message.
+            // Set message 's inner text to the error's message.
+            // Append message to the Projects section's ul.
+            ////////////////////
+            
+            const projectSection = document.getElementById('projects');
+            if (projectSection) {
+                const projectList = projectSection.querySelector('ul');
+                if (projectList) {
+                    const message = document.createElement('li');
+                    message.innerText = error.message;
+                    projectList.appendChild(message);
+                }
+            }
+            
+            // TODO: implement this at a later time:
+            // displayFallbackProjects();
         });
 
-    // Function to display repositories - FIXED SCOPE ISSUE
+    // Function to display repositories - FIXED with proper error throwing
     function displayRepositories(repos) {
         // Get fresh references inside the function
         const projectSection = document.getElementById('projects');
@@ -79,7 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (filteredRepos.length === 0) {
-                displayFallbackProjects();
+                // TODO: implement this at a later time:
+                // displayFallbackProjects();
+                projectList.innerHTML = '<li>No non-portfolio repositories found.</li>';
                 return;
             }
             
@@ -102,12 +122,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 project.appendChild(projectDescription);
                 projectList.appendChild(project);
             }
-        } else {
-            console.error('Project section or list not found!');
-        }
+                } else {
+            console.error("Projects section or project list not found in the DOM");
+         }
     }
 
-    // Fallback projects if GitHub API fails - FIXED: Only show real projects
+    /*
+    // TODO: implement this at a later time - commented out for scope reduction
+    // Fallback projects if GitHub API fails - FIXED with proper error throwing
     function displayFallbackProjects() {
         // Get fresh references inside the function
         const projectSection = document.getElementById('projects');
@@ -147,9 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 projectList.appendChild(project);
             }
         } else {
-            console.error('Project section or list not found for fallback!');
+            // FIXED: Throw error instead of just console.error
+            throw new Error("Projects section or project list not found for fallback display");
         }
     }
+    */
 
     // Smooth scrolling for navigation
     document.querySelectorAll('.main-nav a').forEach(link => {
