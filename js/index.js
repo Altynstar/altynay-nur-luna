@@ -115,8 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add description if available
                 const projectDescription = document.createElement('p');
                 projectDescription.textContent = filteredRepos[i].description || 'No description available';
-                projectDescription.style.fontSize = '0.9rem';
-                projectDescription.style.color = '#666';
+                projectDescription.classList.add("project-description");
                 
                 project.appendChild(projectLink);
                 project.appendChild(projectDescription);

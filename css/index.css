@@ -145,6 +145,74 @@ section {
 }
 
 /* ========================
+   MESSAGES SECTION STYLING
+   ======================== */
+#messages ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+#messages li {
+    background-color: #e9f5f3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #2a9d8f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+#messages li a {
+    color: #2a9d8f;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+#messages li a:hover {
+    color: #e76f51;
+    text-decoration: underline;
+}
+
+#messages li span {
+    color: #264653;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0 1rem;
+}
+
+#messages li button {
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 44px; /* Better touch target for mobile */
+    min-width: 100px;
+    box-shadow: 0 2px 4px rgba(231, 111, 81, 0.3);
+}
+
+#messages li button:hover {
+    background-color: #d65a3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 111, 81, 0.4);
+}
+
+#messages li button:active {
+    transform: translateY(0);
+}
+
+/* ========================
    PROJECT DESCRIPTION STYLING
    ======================== */
 .project-description {
