@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 project.appendChild(projectDescription);
                 projectList.appendChild(project);
             }
-                } else {
-            console.error("Projects section or project list not found in the DOM");
-         }
+        } else {
+            throw new Error("Projects section or project list not found in the DOM");
+        }
     }
 
         /*
