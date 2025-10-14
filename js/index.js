@@ -33,11 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // DOM Selection for Projects Section
-    const projectSection = document.getElementById('projects');
-    const projectList = projectSection ? projectSection.querySelector('ul') : null;
-
-    // ✅ FIXED: Use correct GitHub username and fetch()
+    // Fetch GitHub repositories and display them
     // Your GitHub username from your portfolio URL is "Altynstar"
     const githubUsername = "Altynstar";
     
@@ -58,8 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
             displayFallbackProjects();
         });
 
-    // Function to display repositories
+    // Function to display repositories - FIXED SCOPE ISSUE
     function displayRepositories(repos) {
+        // Get fresh references inside the function
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection ? projectSection.querySelector('ul') : null;
+        
+        console.log('displayRepositories called - projectSection:', projectSection);
+        console.log('displayRepositories called - projectList:', projectList);
+        
         if (projectSection && projectList) {
             // Clear any existing hard-coded content
             projectList.innerHTML = '';
@@ -99,30 +102,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 project.appendChild(projectDescription);
                 projectList.appendChild(project);
             }
+        } else {
+            console.error('Project section or list not found!');
         }
     }
 
-    // Fallback projects if GitHub API fails
+    // Fallback projects if GitHub API fails - FIXED: Only show real projects
     function displayFallbackProjects() {
+        // Get fresh references inside the function
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection ? projectSection.querySelector('ul') : null;
+        
+        console.log('displayFallbackProjects called - projectSection:', projectSection);
+        console.log('displayFallbackProjects called - projectList:', projectList);
+        
         if (projectSection && projectList) {
             projectList.innerHTML = '';
             
             const fallbackProjects = [
-                { name: 'Personal Portfolio Website', description: 'Responsive portfolio built with HTML, CSS, and JavaScript' },
-                { name: 'Recipe Blog Template', description: 'Blog template using CSS Grid and Flexbox' },
-                { name: 'JavaScript To-Do App', description: 'Interactive to-do application' }
+                { 
+                    name: 'Personal Portfolio Website', 
+                    description: 'Responsive portfolio built with HTML, CSS, and JavaScript',
+                    url: 'https://github.com/Altynstar/altynay-nur-luna'
+                }
             ];
             
             for (let i = 0; i < fallbackProjects.length; i++) {
                 const project = document.createElement('li');
-                project.innerHTML = `
-                    <strong>${fallbackProjects[i].name}</strong>
-                    <p style="font-size: 0.9rem; color: #666; margin: 0.5rem 0 0 0;">
-                        ${fallbackProjects[i].description}
-                    </p>
-                `;
+                
+                // Create a link to the GitHub repository
+                const projectLink = document.createElement('a');
+                projectLink.href = fallbackProjects[i].url;
+                projectLink.target = '_blank';
+                projectLink.textContent = fallbackProjects[i].name;
+                
+                // Add description
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = fallbackProjects[i].description;
+                projectDescription.style.fontSize = '0.9rem';
+                projectDescription.style.color = '#666';
+                
+                project.appendChild(projectLink);
+                project.appendChild(projectDescription);
                 projectList.appendChild(project);
             }
+        } else {
+            console.error('Project section or list not found for fallback!');
         }
     }
 
