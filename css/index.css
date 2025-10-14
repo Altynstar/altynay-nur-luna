@@ -77,11 +77,9 @@ section {
     background-color: #ccd8d5;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    section {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-}
 }
 
 /* ========================
@@ -97,7 +95,8 @@ section {
     border: 4px solid #2a9d8f;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
- /* ========================
+
+/* ========================
    PROJECTS SECTION - MOBILE (FIXED & ENHANCED)
    ======================== */
 #projects ul {
@@ -143,6 +142,14 @@ section {
     color: white !important;
     border-color: #2a9d8f !important;
     font-style: italic;
+}
+
+/* ========================
+   PROJECT DESCRIPTION STYLING
+   ======================== */
+.project-description {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* ========================
