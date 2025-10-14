@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Append message to the Projects section's ul.
             ////////////////////
             
-            const projectSection = document.getElementById('projects');
+            const projectSection = document.getElementById('Projects');
             if (projectSection) {
                 const projectList = projectSection.querySelector('ul');
                 if (projectList) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to display repositories - FIXED with proper error throwing
     function displayRepositories(repos) {
         // Get fresh references inside the function
-        const projectSection = document.getElementById('projects');
+        const projectSection = document.getElementById('Projects');
         const projectList = projectSection ? projectSection.querySelector('ul') : null;
         
         console.log('displayRepositories called - projectSection:', projectSection);
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fallback projects if GitHub API fails - FIXED with proper error throwing
     function displayFallbackProjects() {
         // Get fresh references inside the function
-        const projectSection = document.getElementById('projects');
+        const projectSection = document.getElementById('Projects');
         const projectList = projectSection ? projectSection.querySelector('ul') : null;
         
         console.log('displayFallbackProjects called - projectSection:', projectSection);
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 projectList.appendChild(project);
             }
         } else {
-            console.error("Projects section or project list not found for fallback display");  // ← FIXED LINE 126
+            console.error("Projects section or project list not found for fallback display");
         }
     }
     */
