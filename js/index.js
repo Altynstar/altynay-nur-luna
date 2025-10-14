@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
          }
     }
 
-    /*
+        /*
     // TODO: implement this at a later time - commented out for scope reduction
     // Fallback projects if GitHub API fails - FIXED with proper error throwing
     function displayFallbackProjects() {
@@ -169,8 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 projectList.appendChild(project);
             }
         } else {
-            // FIXED: Throw error instead of just console.error
-            throw new Error("Projects section or project list not found for fallback display");
+            console.error("Projects section or project list not found for fallback display");  // ← FIXED LINE 126
         }
     }
     */
