@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Skills Section
-    const skillsSection = document.getElementById('skills');
+    const skillsSection = document.getElementById('Skills');
     
     if (skillsSection) {
         const skillsList = skillsSection.querySelector('ul');

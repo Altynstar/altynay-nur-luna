@@ -95,7 +95,25 @@ section {
     border: 4px solid #2a9d8f;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+/* ========================
+   EXPERIENCE SECTION STYLING
+   ======================== */
+#Experience ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
 
+#Experience li {
+    background-color: #e9f5f3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #2a9d8f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 /* ========================
    PROJECTS SECTION - MOBILE (FIXED & ENHANCED)
    ======================== */
