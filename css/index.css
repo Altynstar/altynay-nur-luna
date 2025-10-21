@@ -284,63 +284,113 @@ section {
 @media (max-width: 767px) {
     /* Base mobile fixes */
     body {
-        padding: 10px; /* ← Add some padding */
+        padding: 10px;
     }
     
     section {
         margin-bottom: 1.5rem;
-        padding: 1rem; /* ← Reduced padding for mobile */
+        padding: 1rem;
         margin-left: 10px;
         margin-right: 10px;
-        max-width: calc(100% - 20px); /* ← Ensure it fits */
+        max-width: calc(100% - 20px);
     }
     
+    /* FIX: Smaller name font for mobile */
     h1 {
-        font-size: 2rem; /* ← Smaller heading for mobile */
-        padding: 15px;
+        font-size: 1.8rem; /* ← Smaller than current 2rem */
+        padding: 10px;
+        line-height: 1.2;
     }
     
     h2 {
-        font-size: 1.25rem; /* ← Smaller subheading */
+        font-size: 1.25rem;
     }
     
-    /* Navigation mobile optimization */
+    /* FIX: Stack navigation vertically */
     .main-nav {
-        padding: 0.8rem 1rem; /* ← Reduced padding */
+        padding: 0.8rem 1rem;
     }
     
     .main-nav ul {
-        gap: 0.5rem; /* ← Even smaller gap */
+        flex-direction: column; /* ← STACK VERTICALLY */
+        gap: 0.5rem;
+        align-items: center;
     }
     
     .main-nav a {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        width: 200px; /* ← Consistent width */
+        text-align: center;
     }
     
     /* Skills grid for mobile */
     .skills-blocks {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* ← Smaller min size */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 0.8rem;
     }
     
     /* Profile image mobile sizing */
     .profile-photo {
-        width: 150px; /* ← Smaller on mobile */
+        width: 150px;
         height: 150px;
     }
     
-    /* Messages section mobile fixes */
+    /* FIX: Stack messages vertically - email above message above button */
     #messages li {
-        flex-direction: column; /* ← Stack on mobile */
+        flex-direction: column; /* ← STACK VERTICALLY */
         align-items: flex-start;
         gap: 0.8rem;
         padding: 1rem;
     }
     
+    #messages li a {
+        font-size: 1rem; /* ← Slightly smaller */
+        align-self: stretch;
+        text-align: center;
+        background-color: #e9f5f3;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+    
+    #messages li span {
+        margin: 0;
+        padding: 0.8rem;
+        background-color: white;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
     #messages li button {
-        align-self: stretch; /* ← Full width button on mobile */
+        align-self: stretch; /* ← Full width button */
         min-width: auto;
+        width: 100%;
+    }
+    
+    /* FIX: Ensure no horizontal overflow */
+    .container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    /* FIX: Adjust project cards for mobile */
+    #projects li {
+        padding: 1.2rem 0.8rem;
+        min-height: 80px;
+        font-size: 1rem;
+    }
+    
+    /* FIX: Connect links stacking */
+    .connect-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    .connect-links a {
+        width: 200px;
+        text-align: center;
     }
 }
 
