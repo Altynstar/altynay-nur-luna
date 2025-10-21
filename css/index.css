@@ -6,6 +6,13 @@ body {
     color: rgb(53, 18, 53);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
+    overflow-x: hidden; /* ← ADD THIS to prevent horizontal scroll */
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* ← ADD THIS */
 }
 
 /* ========================
@@ -24,6 +31,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap; /* ← ADD THIS for small screens */
 }
 
 .main-nav li {
@@ -95,6 +103,7 @@ section {
     border: 4px solid #2a9d8f;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 /* ========================
    EXPERIENCE SECTION STYLING
    ======================== */
@@ -114,6 +123,7 @@ section {
     border-left: 4px solid #2a9d8f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* ========================
    PROJECTS SECTION - MOBILE (FIXED & ENHANCED)
    ======================== */
@@ -231,6 +241,36 @@ section {
 }
 
 /* ========================
+   SKILLS SECTION STYLING
+   ======================== */
+.skills-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.skills-blocks li {
+    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
+    color: white;
+    padding: 1.2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.skills-blocks li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(42, 157, 143, 0.4);
+    border-color: #e76f51;
+}
+
+/* ========================
    PROJECT DESCRIPTION STYLING
    ======================== */
 .project-description {
@@ -239,9 +279,135 @@ section {
 }
 
 /* ========================
+   MOBILE-FIRST MEDIA QUERY
+   ======================== */
+@media (max-width: 767px) {
+    /* Base mobile fixes */
+    body {
+        padding: 10px;
+    }
+    
+    section {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    /* FIX: Smaller name font for mobile */
+    h1 {
+        font-size: 1.8rem; /* ← Smaller than current 2rem */
+        padding: 10px;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* FIX: Stack navigation vertically */
+    .main-nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column; /* ← STACK VERTICALLY */
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .main-nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        width: 200px; /* ← Consistent width */
+        text-align: center;
+    }
+    
+    /* Skills grid for mobile */
+    .skills-blocks {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    /* Profile image mobile sizing */
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* FIX: Stack messages vertically - email above message above button */
+    #messages li {
+        flex-direction: column; /* ← STACK VERTICALLY */
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+    
+    #messages li a {
+        font-size: 1rem; /* ← Slightly smaller */
+        align-self: stretch;
+        text-align: center;
+        background-color: #e9f5f3;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+    
+    #messages li span {
+        margin: 0;
+        padding: 0.8rem;
+        background-color: white;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    #messages li button {
+        align-self: stretch; /* ← Full width button */
+        min-width: auto;
+        width: 100%;
+    }
+    
+    /* FIX: Ensure no horizontal overflow */
+    .container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    /* FIX: Adjust project cards for mobile */
+    #projects li {
+        padding: 1.2rem 0.8rem;
+        min-height: 80px;
+        font-size: 1rem;
+    }
+    
+    /* FIX: Connect links stacking */
+    .connect-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    .connect-links a {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+/* ========================
    TABLET STYLES - PROJECTS (768px and up)
    ======================== */
 @media (min-width: 768px) {
+    /* Tablet padding and layout fixes */
+    body {
+        padding: 15px;
+    }
+    
+    section {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
     /* Projects Section Tablet Styles */
     #projects ul {
         display: grid;
